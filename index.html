@@ -1,11 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portfolio</title>
-</head>
-<body>
-    <h1>안녕하세요. 프론트엔드 개발자 김경문입니다.</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KyungMoon Kim Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @font-face {
+        font-family: "MYArirang-Medium";
+        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/MYArirang-Medium.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Ownglyph_ryuttung-Rg";
+        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_ryuttung-Rg.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "KCCMurukmuruk";
+        src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCCMurukmuruk.woff2")
+          format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body,
+      #container {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        overflow-x: hidden; /* To prevent horizontal scrolling */
+      }
+      .nav {
+        font-family: "KCCMurukmuruk", sans-serif;
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+        background-color: white; /* added to ensure navbar is visible */
+      }
+      .navbarList {
+        display: flex;
+        width: 900px;
+        justify-content: space-between;
+        list-style-type: none;
+        padding: 10px;
+      }
+      .target {
+        width: 100%;
+        height: 100vh;
+        color: white;
+        position: relative;
+        text-decoration: none;
+        font-size: 1.7rem;
+      }
+      .section {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: white; /* added to ensure text is visible */
+      }
+      #home {
+        background-image: url("resources/image/sky_V.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+      #profile {
+        background-image: url("resources/image/하얀눈에\ 나뭇잎.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      #introduce {
+        background-image: url("resources/image/하얀색\ 필기노트.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      #game {
+        background-image: url("resources/image/nintendo-switch-6470977_1920.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+      .gametext {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 200px;
+        left: 500px;
+      }
+      .game-item {
+        width: 100px;
+        height: 100px;
+        background-size: cover;
+        margin: 10px;
+      }
+      #rock {
+        background-image: url("resources/image/rock.png");
+      }
+      #teamPRJ {
+        background-color: #50e3c2;
+        height: 100vh;
+        width: 100%;
+      }
+      .section1 h1 {
+        font-family: "MYArirang-Medium", sans-serif;
+        font-size: 7rem;
+      }
+      .section1 p {
+        font-family: "Ownglyph_ryuttung-Rg", sans-serif;
+        font-size: 3rem;
+        color: #ebcb8b;
+      }
+      .nav-link {
+        color: black;
+      }
+      .nav-tabs:hover {
+        transition: 0.5 all;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" href="#home">Home</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" href="#profile">Profile</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" href="#introduce">introduce</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          data-bs-toggle="dropdown"
+          href="#"
+          role="button"
+          aria-expanded="false"
+          >Dropdown</a
+        >
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#game">게임하러가기</a></li>
+          <li>
+            <a class="dropdown-item" href="#teamPRJ">팀 프로젝트 결과물</a>
+          </li>
+          <li><a class="dropdown-item" href="#">blank1</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" href="#">blank2</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <div id="home" class="section section1">
+      <h1></h1>
+      <p>안녕하세요 신입 프론트엔드 개발자를 꿈꾸는 김경문입니다.</p>
+    </div>
+
+    <div id="profile" class="section section2">
+      <h2>이력서</h2>
+      <p>여기는 이력서 페이지입니다.</p>
+    </div>
+
+    <div id="introduce" class="section section6">
+      <h2>introduce</h2>
+      <p>여기는 소개 페이지입니다.</p>
+    </div>
+
+    <div id="game" class="section section4">
+      <div id="Rock Paper Scissors" class="game-item">
+        <p onclick="playGame()" class="gametext">
+          이곳을 누르면 가위바위보 게임이 시작됩니다.
+        </p>
+        <p id="result"></p>
+      </div>
+      <div id="rock" class="game-item"></div>
+      <!-- 여기에 다른 게임 아이템을 추가하세요 -->
+    </div>
+
+    <div id="teamPRJ" class="section section5">
+      <h2>팀 프로젝트 결과물</h2>
+      <p>여기는 팀 프로젝트 결과물 페이지입니다.</p>
+    </div>
+  </body>
+  <script>
+    //첫화면 글자
+    const content = "Kim Kyung Moon Portfolio!";
+    const text = document.querySelector("#home h1");
+    let textIdx = 0;
+    function typing() {
+      let txt = content[textIdx++];
+      text.innerHTML += txt;
+
+      if (textIdx > content.length) {
+        text.textContent = "";
+        textIdx = 0;
+      }
+    }
+    setInterval(typing, 150);
+    // 가위바위보 게임
+    let userNum1 = 0;
+    let userNum2 = 0;
+    let result = "";
+
+    function changeRsp(rsp) {
+      if (rsp == "가위") {
+        return 1;
+      } else if (rsp == "바위") {
+        return 2;
+      } else if (rsp == "보") {
+        return 3;
+      } else {
+        return 0;
+      }
+    }
+
+    function playGame() {
+      let user1 = prompt("첫번째 사람: 가위, 바위, 보 중에 하나를 입력하세요");
+      userNum1 = changeRsp(user1);
+      let user2 = prompt("두번째 사람: 가위, 바위, 보 중에 하나를 입력하세요");
+      userNum2 = changeRsp(user2);
+
+      if (userNum1 === 0 || userNum2 === 0) {
+        result = "잘못된 입력입니다. 다시 시도하세요.";
+      } else {
+        switch (userNum1 - userNum2) {
+          case -2:
+          case 1:
+            result = "첫번째 사람 승리!";
+            break;
+          case -1:
+          case 2:
+            result = "두번째 사람 승리!";
+            break;
+          default:
+            result = "무승부!";
+            break;
+        }
+      }
+
+      document.getElementById("result").innerText = result;
+    }
+  </script>
 </html>
